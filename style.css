@@ -415,6 +415,18 @@ section {
 }
 
 .btn-whatsapp {
+    /* Existing styles */
+    }
+
+/* Center WhatsApp SVG icons */
+.btn-whatsapp svg,
+.whatsapp-float svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    transform: translateY(-1px); /* fine‑tune vertical alignment */
+}
     background-color: var(--color-green-primary);
     color: var(--color-bg-card);
     box-shadow: var(--shadow-whatsapp);
@@ -428,9 +440,16 @@ section {
 }
 
 .whatsapp-icon {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
 }
+
+/* Center WhatsApp SVG path horizontally */
+.whatsapp-icon path,
+.whatsapp-icon-float path {
+    transform: translateX(-1px);
+}
+
 
 /* Shadow pulse animation */
 .shadow-pulse {
@@ -1138,8 +1157,8 @@ section {
 }
 
 .whatsapp-icon-float {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     display: block;
     margin: 0;
     padding: 0;
@@ -1148,6 +1167,7 @@ section {
 .whatsapp-float:hover {
     transform: scale(1.1) rotate(5deg);
     background-color: hsl(145, 65%, 40%);
+    color: var(--color-bg-card);
 }
 
 /* Interactive Leaflet Map Container */
