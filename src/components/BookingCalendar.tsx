@@ -7,6 +7,7 @@ import { fetchAvailability } from '../lib/availability'
 import type { Availability } from '../data/booking'
 import { site } from '../data/site'
 import BookingModal from './BookingModal'
+import MessageForm from './MessageForm'
 
 const { Title, Paragraph } = Typography
 const { useBreakpoint } = Grid
@@ -87,54 +88,67 @@ export default function BookingCalendar() {
           </Paragraph>
         </div>
 
-        {loading && (
-          <div style={{ textAlign: 'center', padding: 48 }}>
-            <Spin size="large" tip="Loading available dates…" />
-          </div>
-        )}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 24,
+            alignItems: 'flex-start',
+          }}
+        >
+          <div style={{ flex: '1 1 460px', minWidth: 0 }}>
+            {loading && (
+              <div style={{ textAlign: 'center', padding: 48 }}>
+                <Spin size="large" tip="Loading available dates…" />
+              </div>
+            )}
 
-        {error && !loading && (
-          <Alert
-            type="warning"
-            showIcon
-            message="We couldn't load the live calendar right now."
-            description={
-              <span>
-                Please try again, or message us on WhatsApp to book.{' '}
-                <Button type="link" href={site.whatsapp} target="_blank" style={{ padding: 0 }}>
-                  Open WhatsApp
-                </Button>
-              </span>
-            }
-            action={
-              <Button size="small" onClick={load}>
-                Retry
-              </Button>
-            }
-          />
-        )}
+            {error && !loading && (
+              <Alert
+                type="warning"
+                showIcon
+                message="We couldn't load the live calendar right now."
+                description={
+                  <span>
+                    Please try again, or message us on WhatsApp to book.{' '}
+                    <Button type="link" href={site.whatsapp} target="_blank" style={{ padding: 0 }}>
+                      Open WhatsApp
+                    </Button>
+                  </span>
+                }
+                action={
+                  <Button size="small" onClick={load}>
+                    Retry
+                  </Button>
+                }
+              />
+            )}
 
-        {!loading && !error && (
-          <div
-            style={{
-              background: '#fff',
-              borderRadius: 24,
-              padding: isMobile ? 8 : 24,
-              boxShadow: '0 10px 15px -3px rgba(0,0,0,0.08)',
-              maxWidth: 900,
-              margin: '0 auto',
-            }}
-          >
-            <Calendar
-              fullscreen={!isMobile}
-              value={value}
-              onSelect={onSelect}
-              onPanelChange={(d) => setValue(d)}
-              disabledDate={disabledDate}
-              cellRender={cellRender}
-            />
+            {!loading && !error && (
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: 24,
+                  padding: isMobile ? 8 : 24,
+                  boxShadow: '0 10px 15px -3px rgba(0,0,0,0.08)',
+                }}
+              >
+                <Calendar
+                  fullscreen={!isMobile}
+                  value={value}
+                  onSelect={onSelect}
+                  onPanelChange={(d) => setValue(d)}
+                  disabledDate={disabledDate}
+                  cellRender={cellRender}
+                />
+              </div>
+            )}
           </div>
-        )}
+
+          <div style={{ flex: '1 1 360px', minWidth: 0 }}>
+            <MessageForm />
+          </div>
+        </div>
       </div>
 
       <BookingModal

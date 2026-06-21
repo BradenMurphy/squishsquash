@@ -45,12 +45,12 @@ export default function Hero() {
                 size="large"
                 shape="round"
                 className="shadow-pulse"
-                onClick={() => scrollTo('contact')}
+                onClick={() => scrollTo('calendar')}
               >
                 Book a Class 🚀
               </Button>
               <Button size="large" shape="round" onClick={() => scrollTo('classes')}>
-                Explore Schedule
+                Explore Classes
               </Button>
             </div>
           </Col>
