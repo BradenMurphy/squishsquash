@@ -21,7 +21,7 @@ export const gallery: GalleryPhoto[] = [
     hover: '🔍 View Swirls',
   },
   {
-    src: 'images/gallery-4.png',
+    src: 'images/gallery-4.jpg',
     alt: 'Smiling boy in blue glasses squeezing green paint into a bowl at an outdoor messy play session',
     hover: '🔍 View Squeeze',
   },

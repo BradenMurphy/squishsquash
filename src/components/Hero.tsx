@@ -68,7 +68,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="images/hero.png"
+                  src="images/hero.jpg"
                   alt="Young child squeezing colourful paint into a mug during outdoor messy play"
                   loading="eager"
                   style={{ width: '100%', display: 'block' }}
