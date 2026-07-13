@@ -42,9 +42,8 @@ export default function Hero() {
               🎨 Sensory Play Durbanville
             </Tag>
             <Paragraph style={{ fontSize: '1.15rem', color: brand.textMuted }}>
-              Where messy play meets sensory development! We provide creative, joyful, and
-              fully-managed messy play experiences that ignite your child’s curiosity while
-              you leave the cleanup to us.
+            Come have a coffee and a catch up while your little ones learn and play by making a giant mess. 
+            The more mess the better and you won't have to clean a thing 🙂
             </Paragraph>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 24 }}>
               <Button
@@ -55,9 +54,6 @@ export default function Hero() {
                 onClick={() => scrollTo('calendar')}
               >
                 Book a Class 🚀
-              </Button>
-              <Button size="large" shape="round" onClick={() => scrollTo('classes')}>
-                Explore Classes
               </Button>
             </div>
           </Col>
@@ -72,8 +68,8 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&h=800&q=80"
-                  alt="Happy smiling toddler covered in bright colorful paint doing sensory messy play"
+                  src="images/hero.png"
+                  alt="Young child squeezing colourful paint into a mug during outdoor messy play"
                   loading="eager"
                   style={{ width: '100%', display: 'block' }}
                 />

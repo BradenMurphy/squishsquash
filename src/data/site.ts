@@ -1,7 +1,7 @@
 export const site = {
   name: 'Squish Squash Studios',
   address: '56 Plataan Road, Durbanville, 7550, Cape Town, South Africa',
-  email: 'kim@squishsquash.co.za',
+  email: 'kimshephered65@gmail.com',
   phone: '+27 82 579 1653',
   coordinator: 'Kim Murphy',
   coords: [-33.8341, 18.6492] as [number, number],
@@ -14,8 +14,9 @@ export const site = {
 }
 
 export const navItems = [
-  { key: 'about', label: 'About' },
-  { key: 'classes', label: 'Classes' },
-  { key: 'gallery', label: 'Gallery' },
-  { key: 'faq', label: 'FAQs' },
+  { key: 'about', label: 'Why Messy Play' },
+  { key: 'classes', label: 'Play Sessions' },
+  { key: 'gallery', label: 'Look Inside' },
+  { key: 'faq', label: 'Parent Questions' },
+  { key: 'contact', label: 'Get in Touch' },
 ]

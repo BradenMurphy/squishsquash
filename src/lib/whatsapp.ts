@@ -20,7 +20,7 @@ export function buildBookingWhatsAppLink(b: BookingMessage): string {
     `Parent: ${b.parentName}  |  WhatsApp: ${b.phone}`,
     `Children: ${b.childrenSummary}`,
   ]
-  if (b.allergies?.trim()) lines.push(`Allergies: ${b.allergies.trim()}`)
+  if (b.allergies?.trim()) lines.push(`Message: ${b.allergies.trim()}`)
   lines.push(`Estimated total: R${b.total}`)
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`
 }

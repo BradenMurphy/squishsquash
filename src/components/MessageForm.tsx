@@ -9,13 +9,11 @@ import type { Availability } from '../data/booking'
 import { brand } from '../theme'
 
 const { Title, Paragraph } = Typography
-const { TextArea } = Input
 
 interface MessageValues {
   parent_name: string
   num_children: string
   preferred_session: string
-  allergies_requirements?: string
 }
 
 const childCountOptions = ['1', '2', '3', '4', '5+'].map((n) => ({ value: n, label: n }))
@@ -29,9 +27,6 @@ function buildWhatsAppLink(v: MessageValues): string {
     `Number of children: ${v.num_children}`,
     `Preferred session: ${v.preferred_session}`,
   ]
-  if (v.allergies_requirements?.trim()) {
-    lines.push(`Allergies / requirements: ${v.allergies_requirements.trim()}`)
-  }
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`
 }
 
@@ -119,16 +114,6 @@ export default function MessageForm() {
             </Form.Item>
           </Col>
         </Row>
-
-        <Form.Item
-          label="Dietary Requirements or Skin Allergies (if any)"
-          name="allergies_requirements"
-        >
-          <TextArea
-            rows={2}
-            placeholder="e.g. Leo is allergic to gluten. We'd love a gluten-safe sensory tub!"
-          />
-        </Form.Item>
 
         <Button
           htmlType="submit"

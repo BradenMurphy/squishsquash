@@ -1,25 +1,20 @@
 export const pricing = {
   basePrice: 200, // R per child
-  siblingDiscount: 0.15, // each additional sibling pays (1 - 0.15) × basePrice
+  siblingPrice: 100, // R flat for each child marked as a sibling
 }
 
 /**
  * Input: one boolean per child = "is this child a sibling of another in this booking".
- * First sibling pays full price; each subsequent sibling is discounted.
- * Non-sibling children always pay full price.
+ * The first child can never be a sibling and always pays full price;
+ * every other child marked as a sibling pays the flat sibling price.
  *
- *   [true, true]        -> [200, 170]      (total 370)
- *   [true, true, true]  -> [200, 170, 170] (total 540)
- *   [true, true, false] -> [200, 170, 200] (total 570)
- *   [false, false]      -> [200, 200]      (total 400)
+ *   [false, true]        -> [200, 100]      (total 300)
+ *   [false, true, true]  -> [200, 100, 100] (total 400)
+ *   [false, true, false] -> [200, 100, 200] (total 500)
+ *   [false, false]       -> [200, 200]      (total 400)
  */
 export function priceForChildren(siblingFlags: boolean[]): number[] {
-  let firstSiblingSeen = false
-  return siblingFlags.map((isSibling) => {
-    if (isSibling && firstSiblingSeen) {
-      return Math.round(pricing.basePrice * (1 - pricing.siblingDiscount))
-    }
-    if (isSibling) firstSiblingSeen = true
-    return pricing.basePrice
-  })
+  return siblingFlags.map((isSibling, i) =>
+    i > 0 && isSibling ? pricing.siblingPrice : pricing.basePrice,
+  )
 }

@@ -35,9 +35,9 @@ export default function Gallery() {
             Laughter, Splashes, &amp; Bright Discoveries
           </Title>
           <Paragraph className="section-desc">
-            See the sensory magic firsthand! Here is a sneak peek into our typical
-            classes—filled with textured spaghetti, paint play, safe foaming cream, and
-            pure delight.
+            I don't know about you but when I go to a restaurant I love to view the menu before I go. 
+            So here is a sneak peak at what our classes are about and what you can expect😄 
+            We look forward to having you over ☕
           </Paragraph>
         </div>
 

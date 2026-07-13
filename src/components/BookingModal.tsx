@@ -49,7 +49,8 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
   }, [open, session, form])
 
   const childrenValues = Form.useWatch('children', form) || []
-  const flags = childrenValues.map((c) => !!c?.sibling)
+  // The first child can never be a sibling, regardless of stale form state.
+  const flags = childrenValues.map((c, i) => i > 0 && !!c?.sibling)
   const prices = priceForChildren(flags)
   const total = prices.reduce((sum, p) => sum + p, 0)
   const numChildren = childrenValues.length
@@ -62,7 +63,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
     if (values.company) return // honeypot tripped
 
     const summary = values.children
-      .map((c, i) => `${c.name} (${c.age}${c.sibling ? ', sibling' : ''}) - R${prices[i]}`)
+      .map((c, i) => `${c.name} (${c.age}${flags[i] ? ', sibling' : ''}) - R${prices[i]}`)
       .join('; ')
 
     setSubmitting(true)
@@ -113,6 +114,8 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
       onCancel={onClose}
       footer={null}
       destroyOnClose
+      centered
+      styles={{ body: { maxHeight: '70vh', overflowY: 'auto' } }}
       title={
         session ? (
           <div>
@@ -169,7 +172,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
             <Form.List name="children">
               {(fields, { add, remove }) => (
                 <>
-                  {fields.map((field) => (
+                  {fields.map((field, index) => (
                     <Space
                       key={field.key}
                       align="baseline"
@@ -190,13 +193,15 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
                       >
                         <Input placeholder="Age" style={{ width: 70 }} />
                       </Form.Item>
-                      <Form.Item
-                        name={[field.name, 'sibling']}
-                        valuePropName="checked"
-                        style={{ marginBottom: 0 }}
-                      >
-                        <Checkbox>Sibling</Checkbox>
-                      </Form.Item>
+                      {index > 0 && (
+                        <Form.Item
+                          name={[field.name, 'sibling']}
+                          valuePropName="checked"
+                          style={{ marginBottom: 0 }}
+                        >
+                          <Checkbox>Sibling</Checkbox>
+                        </Form.Item>
+                      )}
                       {fields.length > 1 && (
                         <Button
                           type="text"
@@ -222,16 +227,19 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
             </Form.List>
 
             <Text type="secondary" style={{ fontSize: '0.85rem' }}>
-              Tick “Sibling” for each child who is a sibling of another child in this booking —
-              the first sibling is full price, each additional sibling is 15% off.
+              The first child is full price — tick “Sibling” for each additional child who is a
+              sibling, and they pay R100 instead.
             </Text>
 
             <Form.Item
-              label="Dietary Requirements or Allergies (optional)"
+              label="Message (optional)"
               name="allergies"
               style={{ marginTop: 16 }}
             >
-              <Input.TextArea rows={2} placeholder="e.g. gluten-free sensory tub please" />
+              <Input.TextArea
+                rows={2}
+                placeholder="e.g. allergies, dietary needs, or anything else we should know"
+              />
             </Form.Item>
 
             {/* Price breakdown */}

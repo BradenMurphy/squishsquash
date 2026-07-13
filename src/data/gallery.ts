@@ -6,23 +6,23 @@ export interface GalleryPhoto {
 
 export const gallery: GalleryPhoto[] = [
   {
-    src: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80',
-    alt: 'Toddler hands completely covered in vibrant yellow and green paint',
+    src: 'images/gallery-1.jpg',
+    alt: 'Young boy squeezing blue foamy paint over a mug during outdoor messy play',
     hover: '🔍 View Splat',
   },
   {
-    src: 'https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=800&q=80',
-    alt: 'Children creating sensory arts and crafts at bright play tables',
+    src: 'images/gallery-2.jpg',
+    alt: 'Two children squeezing colourful paint into mugs at an outdoor sensory party',
     hover: '🔍 View Craft',
   },
   {
-    src: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80',
-    alt: 'Beautiful detailed abstract sensory swirls of foam and paint colors',
+    src: 'images/gallery-3.jpg',
+    alt: 'Toddler playing with rainbow sensory rice, funnels, and scooping toys',
     hover: '🔍 View Swirls',
   },
   {
-    src: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
-    alt: 'Toddler hands squishing and shaping colorful organic sensory dough',
-    hover: '🔍 View Dough',
+    src: 'images/gallery-4.png',
+    alt: 'Smiling boy in blue glasses squeezing green paint into a bowl at an outdoor messy play session',
+    hover: '🔍 View Squeeze',
   },
 ]

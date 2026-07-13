@@ -7,8 +7,29 @@ const { Title } = Typography
 
 const infoItems = [
   { icon: '📍', title: 'Our Durbanville Studio', value: site.address },
-  { icon: '✉️', title: 'Email Support', value: site.email },
-  { icon: '📞', title: 'Call or WhatsApp', value: `${site.phone} (${site.coordinator})` },
+  {
+    icon: '✉️',
+    title: 'Email Support',
+    value: <a href={`mailto:${site.email}`}>{site.email}</a>,
+  },
+  {
+    icon: '📞',
+    title: 'Call Us',
+    value: (
+      <>
+        <a href={`tel:${site.phone.replace(/ /g, '')}`}>{site.phone}</a> ({site.coordinator})
+      </>
+    ),
+  },
+  {
+    icon: '💬',
+    title: 'WhatsApp',
+    value: (
+      <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+        Chat with {site.coordinator.split(' ')[0]}
+      </a>
+    ),
+  },
 ]
 
 export default function Contact() {
@@ -24,7 +45,7 @@ export default function Contact() {
 
         <Row gutter={[24, 24]} style={{ marginBottom: 32 }}>
           {infoItems.map((item) => (
-            <Col xs={24} md={8} key={item.title}>
+            <Col xs={24} sm={12} md={6} key={item.title}>
               <div style={{ display: 'flex', gap: 12 }}>
                 <span style={{ fontSize: '1.4rem' }}>{item.icon}</span>
                 <div>

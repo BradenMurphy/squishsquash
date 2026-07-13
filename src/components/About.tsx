@@ -14,9 +14,8 @@ export default function About() {
             Nurturing Brains Through Squish &amp; Squash
           </Title>
           <Paragraph className="section-desc">
-            Messy play is more than just fun. It is a vital pathway for child growth.
-            Squeezing, pouring, and exploring different textures sparks neurological
-            connections, physical agility, and emotional comfort.
+           Messy play is more than just fun; it’s a brilliant way for kids to learn and express themselves. As a mom to a four-year-old boy, I see firsthand how much joy he gets from unrestricted, creative freedom.
+​I want to create a space where children can dive into sensory play without limits, while moms can just focus on being present.
           </Paragraph>
         </div>
 

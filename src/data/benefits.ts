@@ -12,23 +12,21 @@ export const benefits: Benefit[] = [
   {
     icon: '💪',
     title: 'Fine & Gross Motor Skills',
-    desc: 'Squeezing soft clay, scooping slippery rice, and pouring water build finger strength, grip coordination, and overall physical agility.',
-    image:
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=400&h=300&q=80',
+    desc: "Learning is even more fun when you don't know you're doing it. Every station in the class helps your little one learn an important skill such as hand eye coordination and a stronger grip.",
+    image: 'images/motor.jpg',
     color: brand.pink,
   },
   {
     icon: '🧠',
     title: 'Cognitive & Language Growth',
-    desc: 'Children naturally categorize shapes, experiment with cause-and-effect, and discover descriptive new words like "slimey", "sticky", and "crunchy".',
-    image:
-      'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=400&h=300&q=80',
+    desc: 'There are so many fun words in messy play and so many opportunities to teach new words to your little one. The colours and the shapes are only the beginning.',
+    image: 'images/good.jpg',
     color: brand.turquoise,
   },
   {
     icon: '🤝',
     title: 'Social & Emotional Well-being',
-    desc: 'Our sessions build sensory resilience, reduce tactile sensitivity, and offer a cooperative, stress-free zone for children and parents to connect.',
+    desc: "I strive to make this class a fun and relaxing place for parents and children to come and fill their social battery. With our products being homemade Ith can honestly say it's very relaxing to play, mix and get messy without any of the cleanup anxiety.",
     image:
       'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300&q=80',
     color: brand.orange,
@@ -53,7 +51,7 @@ export const commitments: Commitment[] = [
     icon: '✓',
     color: brand.purple,
     title: 'Aprons Provided',
-    desc: 'Full protective aprons for child & parent included.',
+    desc: 'We provide aprons for your little ones to keep their clothes as clean as possible.',
   },
   {
     icon: '✓',

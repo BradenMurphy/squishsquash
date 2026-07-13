@@ -14,9 +14,8 @@ export default function Classes() {
             Designed for Happy Kids, Loved by Parents
           </Title>
           <Paragraph className="section-desc">
-            We structure our studio with safety and peace-of-mind at the core. All raw
-            materials are edible-safe, full protective aprons are provided, and you get to
-            walk away stress-free with zero cleanup.
+            I wanted to make a space where children and parents can come over and feel like they are just on a playdate. 
+            All our ingredients are taste safe and fun proof.
           </Paragraph>
         </div>
 

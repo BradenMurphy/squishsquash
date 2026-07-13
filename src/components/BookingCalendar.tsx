@@ -77,7 +77,7 @@ export default function BookingCalendar() {
     <section id="calendar" className="section section--alt">
       <div className="container">
         <div className="section-header">
-          <span className="subheading">Book a Date</span>
+          <span className="subheading">Book a Class</span>
           <Title level={2} className="section-title">
             Pick a Day &amp; Reserve Your Spot
           </Title>
