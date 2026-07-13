@@ -1,5 +1,5 @@
 import { Layout, Row, Col, Typography } from 'antd'
-import { FacebookFilled, InstagramOutlined } from '@ant-design/icons'
+import { FacebookFilled } from '@ant-design/icons'
 import Logo from './Logo'
 import { site } from '../data/site'
 import { brand } from '../theme'
