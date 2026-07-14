@@ -1,6 +1,6 @@
 export const pricing = {
   basePrice: 200, // R per child
-  siblingPrice: 100, // R flat for each child marked as a sibling
+  siblingPrice: '50%', // R flat for each child marked as a sibling
 }
 
 /**

@@ -45,12 +45,14 @@ export default function Gallery() {
             replacing the hand-written modal from the original site. */}
         <Image.PreviewGroup
           preview={{
-            toolbarRender: (originalNode, { actions: { onActive }, current, total }) => (
+            // Only prev/next — the default zoom/rotate/flip toolbar
+            // (originalNode) is intentionally not rendered.
+            toolbarRender: (_originalNode, { actions: { onActive }, current, total }) => (
               <>
                 <button
                   type="button"
                   aria-label="Previous image"
-                  style={{ ...navBtn, left: 24 }}
+                  style={{ ...navBtn, right: '48px' }}
                   onClick={() => onActive?.(current === 0 ? total - 1 : -1)}
                 >
                   <LeftOutlined />
@@ -58,12 +60,11 @@ export default function Gallery() {
                 <button
                   type="button"
                   aria-label="Next image"
-                  style={{ ...navBtn, right: 24 }}
+                  style={{ ...navBtn, left: '48px' }}
                   onClick={() => onActive?.(current === total - 1 ? -(total - 1) : 1)}
                 >
                   <RightOutlined />
                 </button>
-                {originalNode}
               </>
             ),
           }}

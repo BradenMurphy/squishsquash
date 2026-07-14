@@ -228,7 +228,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
 
             <Text type="secondary" style={{ fontSize: '0.85rem' }}>
               The first child is full price — tick “Sibling” for each additional child who is a
-              sibling, and they pay R100 instead.
+              sibling, and they pay 50% instead.
             </Text>
 
             <Form.Item

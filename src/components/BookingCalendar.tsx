@@ -6,6 +6,7 @@ import type { Dayjs } from 'dayjs'
 import { fetchAvailability } from '../lib/availability'
 import type { Availability } from '../data/booking'
 import { site } from '../data/site'
+import { pricing } from '../data/pricing'
 import BookingModal from './BookingModal'
 
 const { Title, Paragraph } = Typography
@@ -83,7 +84,13 @@ export default function BookingCalendar() {
           </Title>
           <Paragraph className="section-desc">
             Highlighted days have a class — tap one to see how many spots are left and book your
-            little one(s) in. Sibling discounts apply automatically.
+            little one(s) in.
+          </Paragraph>
+          <Paragraph className="section-desc">
+            <strong>
+              R{pricing.basePrice} per child · R{pricing.siblingPrice} per sibling
+            </strong>{' '}
+            — the sibling discount applies automatically when you book.
           </Paragraph>
         </div>
 
