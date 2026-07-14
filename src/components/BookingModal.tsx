@@ -13,12 +13,20 @@ import {
 import { PlusOutlined, DeleteOutlined, WhatsAppOutlined } from '@ant-design/icons'
 import dayjs from 'dayjs'
 import type { Availability, ChildEntry } from '../data/booking'
-import { priceForChildren } from '../data/pricing'
+import { pricing, priceForChildren } from '../data/pricing'
 import { postBooking } from '../lib/availability'
 import { buildBookingWhatsAppLink } from '../lib/whatsapp'
 import { brand } from '../theme'
 
 const { Text, Title } = Typography
+
+// pricing values are display strings ('R200', '50%'); a percentage means
+// "that share of the base price", anything else is a flat rand amount.
+const baseAmount = parseFloat(pricing.basePrice.replace(/[^\d.]/g, ''))
+const toRands = (price: string) =>
+  price.trim().endsWith('%')
+    ? (baseAmount * parseFloat(price)) / 100
+    : parseFloat(price.replace(/[^\d.]/g, ''))
 
 interface Props {
   session: Availability | null
@@ -51,7 +59,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
   const childrenValues = Form.useWatch('children', form) || []
   // The first child can never be a sibling, regardless of stale form state.
   const flags = childrenValues.map((c, i) => i > 0 && !!c?.sibling)
-  const prices = priceForChildren(flags)
+  const prices = priceForChildren(flags).map(toRands)
   const total = prices.reduce((sum, p) => sum + p, 0)
   const numChildren = childrenValues.length
 

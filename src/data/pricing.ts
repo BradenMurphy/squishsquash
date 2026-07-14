@@ -1,5 +1,5 @@
 export const pricing = {
-  basePrice: 200, // R per child
+  basePrice: 'R200', // R per child
   siblingPrice: '50%', // R flat for each child marked as a sibling
 }
 
@@ -13,7 +13,7 @@ export const pricing = {
  *   [false, true, false] -> [200, 100, 200] (total 500)
  *   [false, false]       -> [200, 200]      (total 400)
  */
-export function priceForChildren(siblingFlags: boolean[]): number[] {
+export function priceForChildren(siblingFlags: boolean[]): string[] {
   return siblingFlags.map((isSibling, i) =>
     i > 0 && isSibling ? pricing.siblingPrice : pricing.basePrice,
   )
