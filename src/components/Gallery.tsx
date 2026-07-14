@@ -52,7 +52,7 @@ export default function Gallery() {
                 <button
                   type="button"
                   aria-label="Previous image"
-                  style={{ ...navBtn, right: '48px' }}
+                  style={{ ...navBtn, right: '68px' }}
                   onClick={() => onActive?.(current === 0 ? total - 1 : -1)}
                 >
                   <LeftOutlined />
@@ -60,7 +60,7 @@ export default function Gallery() {
                 <button
                   type="button"
                   aria-label="Next image"
-                  style={{ ...navBtn, left: '48px' }}
+                  style={{ ...navBtn, left: '68px' }}
                   onClick={() => onActive?.(current === total - 1 ? -(total - 1) : 1)}
                 >
                   <RightOutlined />

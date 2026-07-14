@@ -24,7 +24,7 @@ export default function About() {
             <Col xs={24} md={8} key={b.title}>
               <Card
                 hoverable
-                style={{ height: '100%', borderTop: `4px solid ${b.color}` }}
+                style={{ height: '100%', borderTop: `4px solid ${b.color}`, cursor: 'default' }}
                 cover={
                   <img
                     src={b.image}

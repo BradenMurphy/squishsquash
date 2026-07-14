@@ -35,9 +35,7 @@ export default function Footer() {
           <Col xs={24} md={16}>
             <Logo />
             <Paragraph style={{ color: brand.textMuted, marginTop: 16 }}>
-              A safe, non-toxic, and dynamic sensory play hub in central Durbanville.
-              Dedicated to nurturing child brains through laughter, creative splats, and
-              worry-free messy exploration.
+           Thanks for stopping by! We hope to see you soon—and remember, the best part of messy play here is that we clean up the mess! 🧹✨
             </Paragraph>
             <div
               style={{ display: 'flex', alignItems: 'center', gap: 20, fontSize: '2rem', marginTop: 8 }}

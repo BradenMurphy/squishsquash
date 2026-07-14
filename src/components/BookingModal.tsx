@@ -236,7 +236,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
 
             <Text type="secondary" style={{ fontSize: '0.85rem' }}>
               The first child is full price — tick “Sibling” for each additional child who is a
-              sibling, and they pay 50% instead.
+              sibling, and they will get a {pricing.siblingPrice} discount.
             </Text>
 
             <Form.Item
@@ -274,7 +274,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
                 <span>R{total}</span>
               </div>
               <Text type="secondary" style={{ fontSize: '0.8rem' }}>
-                Payment is arranged offline (EFT / SnapScan) — this is an estimate.
+                Payment is arranged offline (EFT / Cash / Geopayment) — this is an estimate.
               </Text>
             </div>
 

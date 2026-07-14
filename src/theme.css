@@ -63,6 +63,15 @@ h1, h2, h3, h4, h5,
   display: none;
 }
 
+/* The preview footer has a transform, so the "fixed" custom arrows are
+   anchored to it. Keep the counter a constant width so the footer (and the
+   arrows with it) doesn't resize/shift as the digits change. */
+.ant-image-preview-progress {
+  min-width: 72px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Blocks stacked inside a single combined section */
 .section-block:not(:last-child) {
   margin-bottom: 48px;
