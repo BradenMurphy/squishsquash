@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { createElement, Fragment } from 'react'
 
 export interface Faq {
   question: string
