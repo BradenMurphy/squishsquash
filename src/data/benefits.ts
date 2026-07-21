@@ -27,8 +27,7 @@ export const benefits: Benefit[] = [
     icon: '🤝',
     title: 'Social & Emotional Well-being',
     desc: "I strive to make this class a fun and relaxing place for parents and children to come and fill their social battery. With our products being homemade Ith can honestly say it's very relaxing to play, mix and get messy without any of the cleanup anxiety.",
-    image:
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300&q=80',
+    image: 'images/social.jpg',
     color: brand.orange,
   },
 ]
