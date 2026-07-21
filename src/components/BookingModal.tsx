@@ -246,7 +246,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
             >
               <Input.TextArea
                 rows={2}
-                placeholder="e.g. allergies, dietary needs, or anything else we should know"
+                placeholder="e.g.any questions you'd like to ask or anything else we should know."
               />
             </Form.Item>
 
