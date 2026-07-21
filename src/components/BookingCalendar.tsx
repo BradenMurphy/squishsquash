@@ -88,7 +88,7 @@ export default function BookingCalendar() {
           </Paragraph>
           <Paragraph className="section-desc">
             <strong>
-              {pricing.basePrice} per child · {pricing.siblingPrice} per sibling
+              {pricing.basePrice} per child · {pricing.siblingPrice} discount per sibling
             </strong>{' '}
             — the sibling discount applies automatically when you book.
           </Paragraph>

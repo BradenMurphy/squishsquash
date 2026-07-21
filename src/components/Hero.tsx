@@ -45,6 +45,11 @@ export default function Hero() {
             Come have a coffee and a catch up while your little ones learn and play by making a giant mess. 
             The more mess the better and you won't have to clean a thing 🙂
             </Paragraph>
+            <Paragraph style={{ fontSize: '1.15rem', color: brand.textMuted }}>
+              We know how tricky it can be to balance work and quality time with your little one. 
+              That's why our studio offers dedicated seating and reliable Wi-Fi for parents. 
+Drop in, set up your workstation, and enjoy a productive hour (or a quiet cup of coffee!) while your child plays.
+            </Paragraph>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 24 }}>
               <Button
                 type="primary"
