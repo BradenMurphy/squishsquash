@@ -9,7 +9,7 @@ export const site = {
   whatsapp:
     "https://wa.me/27825791653?text=Hi%20Squish%20Squash%20Studios!%20I'd%20love%20to%20book%20a%20messy%20play%20class%20for%20my%20child.",
   instagram: 'https://www.instagram.com/squish_squash_studios/',
-  facebook: 'https://facebook.com',
+  facebook: 'https://www.facebook.com/profile.php?id=61591393404455',
   youtube: 'https://youtube.com',
 }
 
