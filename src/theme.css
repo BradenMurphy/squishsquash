@@ -191,6 +191,30 @@ h1, h2, h3, h4, h5,
 .logo-squash { color: var(--color-turquoise); }
 .logo-studios { color: var(--color-orange); }
 
+/* Booking calendar ---------------------------------------------------------
+   The mini (mobile) calendar's date cells are only ~45px wide, so the cell
+   marker is reduced to a bare dot and the meaning moves to a legend below. */
+@media (max-width: 767px) {
+  .cal-dot {
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .ant-picker-calendar-mini .ant-picker-cell .ant-picker-calendar-date-content {
+    overflow: hidden;
+  }
+
+  .cal-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 12px 8px 4px;
+    font-size: 13px;
+  }
+}
+
 /* Leaflet popup needs to sit above antd content but below modals */
 .leaflet-container {
   border-radius: 16px;

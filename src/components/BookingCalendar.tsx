@@ -59,6 +59,14 @@ export default function BookingCalendar() {
     if (!s) return null
     const status = s.spotsLeft <= 0 ? 'error' : 'success'
     const text = s.spotsLeft <= 0 ? 'Full' : 'Available'
+    // The mini calendar's cells are far too narrow for the label — show just the dot.
+    if (isMobile) {
+      return (
+        <div className="cal-dot">
+          <Badge status={status} />
+        </div>
+      )
+    }
     return <Badge status={status} text={text} />
   }
 
@@ -137,6 +145,12 @@ export default function BookingCalendar() {
               disabledDate={disabledDate}
               cellRender={cellRender}
             />
+            {isMobile && (
+              <div className="cal-legend">
+                <Badge status="success" text="Spots open" />
+                <Badge status="error" text="Full" />
+              </div>
+            )}
           </div>
         )}
       </div>
