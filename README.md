@@ -60,16 +60,19 @@ npm run preview  # serve the production build locally
 
 ## 📦 How it builds
 
-`npm run build` compiles the whole app into **one JS file + one CSS file** with stable
-names, and Vite injects both tags into the generated `dist/index.html` automatically:
+`npm run build` compiles the whole app into **one JS file + one CSS file**, and Vite
+injects both tags into the generated `dist/index.html` automatically:
 
 ```
 dist/
-├─ index.html                 # SEO/OG meta + the two tags below, auto-injected
-├─ assets/squish-squash.js     # React + antd + app  (~398 kB gzip, self-contained)
-├─ assets/squish-squash.css    # all styles          (~7 kB gzip)
-└─ CNAME                        # custom domain, copied from public/
+├─ index.html                        # SEO/OG meta + the two tags below, auto-injected
+├─ assets/squish-squash-[hash].js    # React + antd + app  (~398 kB gzip, self-contained)
+├─ assets/squish-squash-[hash].css   # all styles          (~7 kB gzip)
+└─ CNAME                             # custom domain, copied from public/
 ```
+
+The `[hash]` is content-derived, so every deploy publishes to a new URL and browsers
+can't serve a stale bundle. Don't pin these to fixed filenames.
 
 `dist/` is the complete deployable site. Serve it over HTTP (e.g. `npm run preview`) —
 don't open `index.html` directly, as the relative asset paths need a server.
