@@ -57,8 +57,8 @@ export default function BookingCalendar() {
     if (info.type !== 'date') return info.originNode
     const s = byDate[current.format('YYYY-MM-DD')]
     if (!s) return null
-    const status = s.spotsLeft <= 0 ? 'error' : s.spotsLeft <= 3 ? 'warning' : 'success'
-    const text = s.spotsLeft <= 0 ? 'Full' : `${s.spotsLeft} left`
+    const status = s.spotsLeft <= 0 ? 'error' : 'success'
+    const text = s.spotsLeft <= 0 ? 'Full' : 'Available'
     return <Badge status={status} text={text} />
   }
 
@@ -83,14 +83,13 @@ export default function BookingCalendar() {
             Pick a Day &amp; Reserve Your Spot
           </Title>
           <Paragraph className="section-desc">
-            Highlighted days have a class — tap one to see how many spots are left and book your
-            little one(s) in.
+            Highlighted days have a class — tap one to book your little one(s) in.
           </Paragraph>
           <Paragraph className="section-desc">
             <strong>
-              {pricing.basePrice} per child · {pricing.siblingPrice} discount per sibling
+              {pricing.basePrice} for the first child · {pricing.siblingPrice} per sibling
             </strong>{' '}
-            — the sibling discount applies automatically when you book.
+            — the sibling rate applies automatically when you book.
           </Paragraph>
         </div>
 

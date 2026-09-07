@@ -6,7 +6,7 @@ export interface BookingMessage {
   session: Availability
   parentName: string
   phone: string
-  childrenSummary: string // e.g. "Leo (2, sibling) - R200; Mia (4) - R200"
+  childrenSummary: string // e.g. "Mia (4) - R150; Leo (2, sibling) - R100"
   total: number
   allergies?: string
 }

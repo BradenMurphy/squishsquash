@@ -20,7 +20,7 @@ import { brand } from '../theme'
 
 const { Text, Title } = Typography
 
-// pricing values are display strings ('R200', '50%'); a percentage means
+// pricing values are display strings ('R150', 'R100'); a percentage means
 // "that share of the base price", anything else is a flat rand amount.
 const baseAmount = parseFloat(pricing.basePrice.replace(/[^\d.]/g, ''))
 const toRands = (price: string) =>
@@ -148,7 +148,7 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
               </Text>
             ) : (
               <Text strong style={{ color: brand.green }}>
-                {session.spotsLeft} spot{session.spotsLeft === 1 ? '' : 's'} left
+                Spaces available
               </Text>
             )}
           </div>
@@ -235,8 +235,8 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
             </Form.List>
 
             <Text type="secondary" style={{ fontSize: '0.85rem' }}>
-              The first child is full price — tick “Sibling” for each additional child who is a
-              sibling, and they will get a {pricing.siblingPrice} discount.
+              The first child is {pricing.basePrice} — tick “Sibling” for each additional child who
+              is a sibling, and they pay {pricing.siblingPrice} each.
             </Text>
 
             <Form.Item
@@ -280,8 +280,8 @@ export default function BookingModal({ session, open, onClose, onBooked }: Props
 
             {overCapacity && !isFull && (
               <Text style={{ color: brand.pink, display: 'block', marginBottom: 12 }}>
-                Only {session.spotsLeft} spot{session.spotsLeft === 1 ? '' : 's'} left — please
-                reduce the number of children.
+                There isn't enough space in this class for that many children — please reduce the
+                number of children.
               </Text>
             )}
 

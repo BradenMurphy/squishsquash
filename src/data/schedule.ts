@@ -15,7 +15,7 @@ export const schedule: ScheduleRow[] = [
     className: 'Squish Squash Messy Play 🎨',
     ageGroup: 'All ages up to 5',
     time: '02:00 PM - 04:00 PM',
-    price: 'R200 / child',
+    price: 'R150 / child · R100 / sibling',
     accent: 'hsl(330, 90%, 95%)',
   },
   {
@@ -24,7 +24,7 @@ export const schedule: ScheduleRow[] = [
     className: 'Family Messy Fun 🎉',
     ageGroup: 'All ages up to 5',
     time: '09:00 AM - 11:00 AM',
-    price: 'R200 / child',
+    price: 'R150 / child · R100 / sibling',
     accent: 'hsl(25, 95%, 94%)',
   },
 ]
