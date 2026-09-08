@@ -91,7 +91,7 @@ export default function BookingCalendar() {
             Pick a Day &amp; Reserve Your Spot
           </Title>
           <Paragraph className="section-desc">
-            Highlighted days have a class — tap one to book your little one(s) in.
+            Days with a green dot have a class — tap your preferred date to book your little one(s) in.
           </Paragraph>
           <Paragraph className="section-desc">
             <strong>
